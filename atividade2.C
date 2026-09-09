@@ -31,7 +31,7 @@ typedef enum {
     MOEDA_BRONZE,
     MOEDA_PRATA,
     MOEDA_OURO,
-    MOEDA DIAMANTE // Novo valor adicionado
+    MOEDA_DIAMANTE // Novo valor adicionado
 } TipoMoeda;
 
 typedef struct {
