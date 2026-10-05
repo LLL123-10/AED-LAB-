@@ -188,6 +188,7 @@ bool carregarJogoBinario(void) {
 }
 
 int main(void) {
+    char nomeJogador[16] = "Jogador1";
     srand((unsigned int)time(NULL));
 
     InitWindow(LARGURA_JANELA, ALTURA_JANELA, "Atividade 6 - Manipulacao de Arquivos (texto e binario)");
@@ -234,7 +235,7 @@ int main(void) {
         }
 
         if (IsKeyPressed(KEY_F5)) { // salva a pontuação no arquivo de texto
-            salvarPlacarTexto(pontuacao);
+            salvarPlacarTexto(nomeJogador, pontuacao);
             if (pontuacao > melhorPontuacao) melhorPontuacao = pontuacao;
             TextCopy(mensagem, "Placar salvo em placar.txt!");
             tempoMensagem = 2.0f;
@@ -259,7 +260,7 @@ int main(void) {
             } else {
                 strcpy(mensagem, "Nenhum save encontrado.");
            }
-           tempoMensagem = 180; 
+           tempoMensagem = 3.0f; 
         }
 
         if (tempoMensagem > 0.0f) tempoMensagem -= GetFrameTime();
