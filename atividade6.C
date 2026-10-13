@@ -128,7 +128,7 @@ void salvarPlacarTexto(const char *nomeJogador, int pontuacao) {
     FILE *arquivo = fopen(ARQUIVO_PLACAR, "a"); // "a": anexa ao final, modo texto
     if (arquivo == NULL) return;
 
-    fprintf(arquivo, "%s: %d\n", nomeJogador, pontuacao);
+    fprintf(arquivo, "\%s: \%d\textbackslash n", nomeJogador, pontuacao);
     fclose(arquivo);
 }
 
@@ -141,7 +141,7 @@ int lerMelhorPontuacao(void) {
     char nomeLido[16]; // Buffer para ler o nome provisoriamente
 
     // %15s limita a leitura para evitar estouro de buffer
-    while (fscanf(arquivo, "%15s %d", nomeLido &valor) == 2) {
+    while (fscanf(arquivo, "\%15s \%d", nomeLido &valor) == 2) {
         if (valor > melhor) melhor = valor;
     }
     fclose(arquivo);
